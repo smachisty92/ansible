@@ -36,6 +36,15 @@
 
 #Scope of task variables is only to that task, the other task cannot access the other tasks variables
 
+#URL coming from Inventory
+- name: varibale precedence
+  hosts: all
+  tasks:
+    - name: Print URL
+      ansible.builtin.debug:
+        msg: URL == {{URL}}
+
+
 
 #Varibale precedence
 - name: varibale precedence
