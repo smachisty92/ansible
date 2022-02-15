@@ -6,3 +6,14 @@
     - name: Print URL
       ansible.builtin.debug:
         msg: URL ={{URL}}
+
+#Note: if we declare a varibale in PLAY level thenall the tasks can access that variables.
+
+- name: Variables from File in Play Level
+  hosts: all
+  vars_files:
+    - sample-vars.yml
+  tasks:
+    name: Print URL
+      ansible.builtin.debug:
+        msg: URL ={{URL}}
