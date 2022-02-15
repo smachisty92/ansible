@@ -42,7 +42,7 @@
   hosts: all
   vars:
     URL: play.example.come
-  vars_Files:
+  vars_files:
     - sample-vars.yml
   tasks:
     - name: Print URL
