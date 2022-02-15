@@ -3,7 +3,7 @@
   roles:
     - frontend
 
-- name: Setup MongoDB Component
-  hosts: MONGODB
-  roles:
-    - mongodb
+#- name: Setup MongoDB Component
+#  hosts: MONGODB
+#  roles:
+#    - mongodb
