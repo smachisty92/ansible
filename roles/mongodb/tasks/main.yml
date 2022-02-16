@@ -3,7 +3,7 @@
     src: mongo.repo
     dest: /etc/yum.repos.d/mongo.repo
 
-- name: Install Nginx
+- name: Install Mongodb
   ansible.builtin.yum:
     name: mongodb-org
     state: installed
@@ -20,6 +20,21 @@
     name: mongod
     state: restarted
     enabled: yes
+
+- name: Download Database code
+  import_role:
+    name: common
+    tasks_from: donwload
+
+- name: Load Schema - Catalogue
+  community.mongodb.mongodb_shell:
+    file: "/tmp/mongodb-main/catalogue.js"
+    idempotent: yes # it will try to do it, if its not there and if its there it will ignore, if we dont use it everytime we run it will create and everytime it will throw error
+
+- name: Load Schema - user
+  community.mongodb.mongodb_shell:
+    file: "/tmp/mongodb-main/user.js"
+    idempotent: yes
 #
 ### Install MongoDB Manual Steps.
 #
