@@ -71,3 +71,21 @@
 #    # cd mysql-main
 #    # mysql -u root -pRoboShop@1 <shipping.sql
 #    ```
+
+- name: Setup MySql Repo
+  ansible.builtin.copy:
+    src: mysql.repo
+    dest: /etc/yum.repos.d/mysql.repo
+
+- name: Install MySQL
+  ansible.builtin.yum:
+    name: mysql-community-server
+    state: installed
+
+- name: Start MySQL service
+  ansible.builtin.systemd:
+    name: mysqld
+    state: started
+    enabled: yes
+
+- name:
