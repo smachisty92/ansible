@@ -35,7 +35,7 @@
     - redis
 
 - name: Setup USER Component
-  host: USER
+  hosts: USER
   become: yes
   tags:
     - user
