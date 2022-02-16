@@ -95,4 +95,5 @@
 
 - name: Print
   debug:
-    msg: "{{mysql_output}}"
+    msg: "{{mysql_output | b64decode}}"
+
