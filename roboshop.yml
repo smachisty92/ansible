@@ -20,7 +20,8 @@
   roles:
     - catalogue
 
-#- name: Setup MongoDB Component
-#  hosts: MONGODB
-#  roles:
-#    - mongodb
+- name: Setup REDIS Component
+  hosts: REDIS
+  become: yes
+  roles:
+    - redis
