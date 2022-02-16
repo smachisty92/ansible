@@ -7,7 +7,7 @@
       loop:
         - Raju
         - chisty
-    -name: Demo on list values, each value is a map
+    - name: Demo on list values, each value is a map
       debug:
         msg: Hello, {{item.name}}, welcome to {{item.course}}
       loop:
