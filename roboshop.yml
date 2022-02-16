@@ -1,13 +1,18 @@
 #Become means to run the script as root user if yes the script will run as root user
 
 
+#
+#- name: Setup Frontend Component
+#  hosts: FRONTEND
+#  become: yes
+#  roles:
+#    - frontend
 
 - name: Setup Frontend Component
-  hosts: FRONTEND
+  hosts: MONGODB
   become: yes
   roles:
-    - frontend
-
+    - mongodb
 
 
 
