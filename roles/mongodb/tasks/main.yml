@@ -33,7 +33,7 @@
 
 - name: Load Schema - user
   community.mongodb.mongodb_shell:
-    file: "/tmp/mongodb-main/user.js"
+    file: "/tmp/mongodb-main/users.js"
     idempotent: yes
 #
 ### Install MongoDB Manual Steps.
