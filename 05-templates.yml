@@ -1,0 +1,4 @@
+- name: Demo on Loops
+  hosts: localhost
+  roles:
+    - demo
