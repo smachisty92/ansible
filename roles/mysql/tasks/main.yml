@@ -86,7 +86,7 @@
   ansible.builtin.systemd:
     name: mysqld
     state: started
-    enabled: yes
+    enabled: true
 
 - name: Find
   ansible.builtin.slurp:
@@ -95,5 +95,5 @@
 
 - name: Print
   debug:
-    msg: "{{mysql_output | b64decode}}"
+    msg: "{{mysql_output['content'] | b64decode}}"
 
