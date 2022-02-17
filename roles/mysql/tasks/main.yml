@@ -91,7 +91,7 @@
 - name: Check if new password is working
   mysql_info:
     login_user: root
-    login_password:RoboShop@1
+    login_password: RoboShop@1
     filter: database
 
 - name: Find
