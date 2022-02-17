@@ -1,6 +1,6 @@
 - name: Conditions
   hosts: localhost
-  var:
+  vars:
     a: 1
     b: abc
     c: true
