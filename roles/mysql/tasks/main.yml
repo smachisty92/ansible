@@ -79,7 +79,9 @@
 
 - name: Install MySQL
   ansible.builtin.yum:
-    name: mysql-community-server
+    name:
+      - mysql-community-server
+      - MySQL-python # to check if login is properly working fine, python needs to be installed
     state: installed
 
 - name: Start MySQL service
