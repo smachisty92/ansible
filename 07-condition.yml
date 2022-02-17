@@ -1,9 +1,9 @@
 - name: Conditions
   hosts: localhost
   vars:
-    a: 1
-    b: abc
-    c: true
+    a: 2
+    b: abc2
+    c: false
   tasks:
     - name: print 1
       debug:
