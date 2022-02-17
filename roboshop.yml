@@ -73,3 +73,11 @@
     - rabbitmq
   roles:
     - rabbitmq
+
+- name: Setup PAYMENT Component
+  hosts: PAYMENT
+  become: yes
+  tags:
+    - payment
+  roles:
+    - payment
