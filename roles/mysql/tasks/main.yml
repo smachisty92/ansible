@@ -103,7 +103,7 @@
   register: mysql_output
   when: check_pass.failed # this means this task will only run when failed= true
 
-- name: Print
-  debug:
-    msg: "{{mysql_output}}"
-  when: check_pass.failed  # this means this task will only run when failed= true
+
+- name: change default password
+  ansible.builtin.shell: mysql --connect-expired-password -uroot -p"${mysql_output.stdout}"
+  when: check_pass.failed
