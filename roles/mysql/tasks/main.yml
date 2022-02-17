@@ -89,11 +89,10 @@
     enabled: true
 
 - name: Find
-  ansible.builtin.slurp:
-    src: /var/log/mysqld.log
+  ansible.builtin.shell: grep 'temporary password' /var/log/mysqld.log | awk '{print $nf}'
   register: mysql_output
 
 - name: Print
   debug:
-    msg: "{{mysql_output['content'] | b64decode}}"
+    msg: "{{mysql_output}}"
 
