@@ -1,7 +1,9 @@
+# conditions: when you want to check or make any task skip we can use this condtions
+
 - name: Conditions
   hosts: localhost
   vars:
-    a: 2
+    a: 1
     b: abc2
     c: false
   tasks:
