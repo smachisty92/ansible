@@ -98,6 +98,10 @@
   ignore_errors: yes # usually when a task failes,ansible doesn't continue, if we need to continue, we need to make ignore_errors as yes
   register: check_pass #register is a varibale
 
+- name: Print 1
+  debug:
+    msg: "{{check_pass}}"
+
 - name: Find
   ansible.builtin.shell: grep 'temporary password' /var/log/mysqld.log | awk '{print $nf}'
   register: mysql_output
