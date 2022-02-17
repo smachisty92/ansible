@@ -12,7 +12,8 @@
 
 - name: Install {{COMPONENT}} packages based on packages.json
   ansible.builtin.shell: mvn clean package && mv target/shipping-1.0.jar shipping.jar
-    path: /home/roboshop/{{COMPONENT}}
+  args:
+    chdir: /home/roboshop/{{COMPONENT}} # here we are telling shell to change the directory and perform the task
   become_user: roboshop
 
 - name: Configure SystemD for {{COMPONENT}}
