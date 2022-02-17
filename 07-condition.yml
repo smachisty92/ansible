@@ -4,7 +4,7 @@
     a: 1
     b: abc
     c: true
-  task:
+  tasks:
     - name: print 1
       debug:
         msg: a is equal to 1
