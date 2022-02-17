@@ -22,6 +22,14 @@
   debug:
     msg: "{{appUser}}"
 
+- name: Replacing UID and GID {{COMPONENT}} config
+  lineinfile:
+    path: /home/roboshop/{{COMPONENT}}/{{COMPONENT}}.ini
+    search_string: "{{item.search}}"
+    line: "{{item.search}} = {{item.replace}}"
+  loop:
+    - {search: uid, replace: uid}
+
 - name: Configure SystemD for {{COMPONENT}}
   ansible.builtin.import_role:
     name: common
