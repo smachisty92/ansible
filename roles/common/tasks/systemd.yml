@@ -1,0 +1,11 @@
+- name: Setup Catalogue systemd Config file
+  ansible.builtin.template:
+    src: systemd.service
+    dest: /etc/systemd/system/{{COMPONENT}}.service
+
+- name: Start {{COMPONENT}} service
+  ansible.builtin.systemd:
+    name: "{{COMPONENT}}"  #when you have a value, you need to double code it
+    state: restarted
+    enabled: yes
+    daemon_reload: yes

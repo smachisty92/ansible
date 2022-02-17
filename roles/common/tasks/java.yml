@@ -1,14 +1,8 @@
 
-- name: Setup Repo file for NodeJS
-  ansible.builtin.copy:
-    src: nodejs.repo
-    dest: /etc/yum.repos.d/nodejs.repo
 
-- name: Install NodesJS
+- name: Install Mavan
   ansible.builtin.yum:
-    name:
-      - nodejs
-      - gcc-c++
+    name: maven
     state: installed
 
 - name: Setup App User and App Code
@@ -16,8 +10,8 @@
     name: common
     tasks_from: download
 
-- name: Install packages based on packages.json
-  community.general.npm:
+- name: Install {{COMPONENT}} packages based on packages.json
+  ansible.builtin.shell: mvn clean package && mv target/shipping-1.0.jar shipping.jar
     path: /home/roboshop/{{COMPONENT}}
   become_user: roboshop
 
