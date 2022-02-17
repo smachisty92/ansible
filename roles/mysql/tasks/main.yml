@@ -94,7 +94,7 @@
   mysql_info:
     login_user: root
     login_password: RoboShop@1
-    filter: database
+    filter: databases
   ignore_errors: yes # usually when a task failes,ansible doesn't continue, if we need to continue, we need to make ignore_errors as yes
   register: check_pass #register is a varibale
 
