@@ -93,7 +93,7 @@
 - name: Check if new password is working
   mysql_info:
     login_user: root
-    login_password: RoboShop@1
+    login_password: "{{MYSQL_NEW_PASSWORD}}"
     filter: databases
   ignore_errors: yes # usually when a task failes,ansible doesn't continue, if we need to continue, we need to make ignore_errors as yes
   register: check_pass #register is a varibale
@@ -106,7 +106,7 @@
       register: mysql_output
 
     - name: copy password reset sql
-      ansible.builtin.copy:
+      ansible.builtin.template:
         src: pass-reset.sql
         dest: /tmp/pass.sql
 
