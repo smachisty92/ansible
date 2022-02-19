@@ -37,9 +37,7 @@
 #    idempotent: yes
 
 - name: loop Schema
-  community.mongodb.mongodb_shell:
-    file: "/tmp/mongodb-main/{{item}}.js"
-    idempotent: yes
+  shell: mongo c "/tmp/mongodb-main/{{item}}.js"
   loop:
     - catalogue
     - users
