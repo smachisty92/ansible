@@ -3,6 +3,7 @@ frontend.roboshop.internal
 
 [MONGODB]
 mongodb.roboshop.internal
+test.ronbo.int
 
 [CATALOGUE]
 catalogue.roboshop.internal

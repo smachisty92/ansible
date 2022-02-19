@@ -1,6 +1,6 @@
 #URL coming from Inventory
 - name: varibale precedence
-  hosts: all
+  hosts: MONGODB
   tasks:
     - name: Print URL
       ansible.builtin.debug:
