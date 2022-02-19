@@ -16,9 +16,13 @@
     name: common
     tasks_from: download
 
-- name: Install packages based on packages.json
-  community.general.npm:
-    path: /home/roboshop/{{COMPONENT}}
+#- name: Install packages based on packages.json
+#  community.general.npm:
+#    path: /home/roboshop/{{COMPONENT}}
+#  become_user: roboshop
+
+- name: Install {{COMPONENT}} Dependencies
+  shell: cd /home/roboshop/{{COMPONENT}} $$ npm install
   become_user: roboshop
 
 - name: Configure SystemD for {{COMPONENT}}
