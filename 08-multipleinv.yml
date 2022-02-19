@@ -1,0 +1,7 @@
+#URL coming from Inventory
+- name: varibale precedence
+  hosts: all
+  tasks:
+    - name: Print URL
+      ansible.builtin.debug:
+        msg: URL == {{URL}}
