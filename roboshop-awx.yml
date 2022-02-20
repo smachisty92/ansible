@@ -1,0 +1,9 @@
+#Become means to run the script as root user if yes the script will run as root user
+
+
+
+- name: Setup Frontend Component
+  hosts: all
+  become: yes
+  roles:
+    - "{{COMPONENT}}"
