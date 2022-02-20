@@ -3,3 +3,8 @@
   tasks:
     - name: Run Uptime
       shell: uptime
+      notify: print
+  handlers:
+    - name: print
+      debug:
+        msg: Message from handler
