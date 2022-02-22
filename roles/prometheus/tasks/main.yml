@@ -2,7 +2,7 @@
   template:
     src: prometheus.yml
     dest: /opt/prometheus/prometheus.yml
-- name:Restart Prometheus
+- name: Restart Prometheus
   systemd:
     name: prometheus
     state: restarted
