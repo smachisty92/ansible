@@ -1,0 +1,9 @@
+- name: Copy Prometheus cofig
+  template:
+    src: prometheus.yml
+    dest: /opt/prometheus/prometheus.yml
+- name:Restart Prometheus
+  systemd:
+    name: prometheus
+    state: restarted
+    enabled: yes
