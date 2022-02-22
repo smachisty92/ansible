@@ -36,3 +36,6 @@ scrape_configs:
 #        secret_key: {{AWS_SECRET_KEY}}
 {% endraw %}
         port: 9100
+        filter:
+          - name: " tag:Moniter"
+            values: ["yes"]
