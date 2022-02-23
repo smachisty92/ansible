@@ -25,5 +25,4 @@ groups:
         component: {{component.componentName}}
       annotations:
         summary: {{component.componentName}} service Alert
-
-  {% endfor %}
+{% endfor %}
