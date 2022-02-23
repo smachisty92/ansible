@@ -5,7 +5,7 @@
 
 - name: Copy Alerts configuration
   template:
-    src: alerts-6.yml
+    src: alerts.yml
     dest: /opt/prometheus/alerts-6.yml
 
 - name: Copy Alerts Manager configuration
