@@ -1,4 +1,4 @@
-groups:
+  groups:
   - name: RoboShopAlerts
     rules:
       - alert: DiskUsageAlertWarning
@@ -16,14 +16,14 @@ groups:
         annotations:
           summary: High Disk Usage Alert Critical
 
-  {% for component in COMPONENTS %}
-- alert: {{component.componentName}}ServiceAlert
-  expr: node_systemd_unit_state{name="{{component.serviceName}}.service", state="active"} == 0
-  for: 1m
-  labels:
-    severity: critical
-    component: {{component.componentName}}
-  annotations:
-    summary: {{component.componentName}} service Alert
+    {% for component in COMPONENTS %}
+  - alert: {{component.componentName}}ServiceAlert
+    expr: node_systemd_unit_state{name="{{component.serviceName}}.service", state="active"} == 0
+    for: 1m
+    labels:
+      severity: critical
+      component: {{component.componentName}}
+    annotations:
+      summary: {{component.componentName}} service Alert
 
-  {% endfor %}
+    {% endfor %}
