@@ -7,7 +7,7 @@
 # we install only node in the applications not in the databases
 
 - name: Install Filebeat
-  ansible.builtin.import.role:
+  ansible.builtin.import_role:
     name: elk
     tasks_from: filebeat
   when: APPTYPE == "app" or APPTYPE == "web"
