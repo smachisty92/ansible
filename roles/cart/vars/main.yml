@@ -1,2 +1,4 @@
 COMPONENT: cart
 APPTYPE: app
+LOG_FILE:
+  - /var/log/nginx/access.log
