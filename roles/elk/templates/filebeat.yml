@@ -3,6 +3,9 @@
 filebeat.inputs:
   - type: filestream
     enabled: true
+    fields:
+      componentName: {{COMPONENT}}
+      env: {{ENV}}
     paths:
 {% for logfile in LOG_FILE %}
       - {{logfile}}
