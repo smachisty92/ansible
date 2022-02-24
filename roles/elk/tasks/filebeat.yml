@@ -23,8 +23,10 @@
   template:
     src: roboshop.conf
     dest: /etc/rsyslog.d/roboshop.conf
+  when: APPTYPE == "app"
 
 - name: Restart rsyslog
   systemd:
     name: rsyslog
     state: restarted
+  when: APPTYPE == "app"
