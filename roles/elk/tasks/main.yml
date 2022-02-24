@@ -1,0 +1,14 @@
+- name: Copy filebeat yum repo file
+  copy:
+    src: elastic.repo
+    dest: /etc/yum.repos.d/elastic.repo
+
+- name: install filebeat
+  yum:
+    name: filebeat
+    state: installed
+
+- name: Configure filebeat
+  template:
+    src: filebeat.yml
+    dest: /etc/filebeat/filebeat.yml
