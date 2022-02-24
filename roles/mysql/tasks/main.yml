@@ -38,7 +38,6 @@
 
     - name: change default password
       ansible.builtin.shell: mysql --connect-expired-password -uroot -p"{{mysql_output.stdout}}" </tmp/pass.sql
-      ignore_errors: yes # remvoe it
 
 - name: Download Database code
   import_role:
