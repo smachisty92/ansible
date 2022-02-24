@@ -7,7 +7,7 @@ filebeat.inputs:
       componentName: {{COMPONENT}}
       env: {{ENV}}
     paths:
-{% for logfile in LOG_FILE %}
+{% for logfile in LOG_FILES %}
       - {{logfile}}
 {% endfor %}
 output.logstash:
