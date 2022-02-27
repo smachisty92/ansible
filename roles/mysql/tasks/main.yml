@@ -18,11 +18,11 @@
 
 - name: Check if new password is working
   mysql_info:
-    login_user: root
-    login_password: "{{MYSQL_NEW_PASSWORD}}"
-    filter: databases
-  ignore_errors: yes # usually when a task failes,ansible doesn't continue, if we need to continue, we need to make ignore_errors as yes
-  register: check_pass #register is a varibale
+    shell: echo "show databases" | mysql -uroot -p"{{MYSQL_NEW_PASSWORD}}"
+    #login_user: root
+    #login_password: "{{MYSQL_NEW_PASSWORD}}"
+    register: check_pass
+    ignore_errors: yes # usually when a task failes,ansible doesn't continue, if we need to continue, we need to make ignore_errors as yes
 
 - name: Password change block
   when: check_pass.failed # this means this task will only run when failed= true
