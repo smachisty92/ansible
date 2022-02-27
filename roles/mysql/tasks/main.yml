@@ -34,7 +34,7 @@
   when: check_pass.failed # this means this task will only run when failed= true
   block: # the when condition will be used for all below tasks
     - name: Find the tempory password
-      ansible.builtin.shell: grep 'temporary password' /var/log/mysqld.log | awk '{print $nf}'
+      ansible.builtin.shell: grep 'temporary password' /var/log/mysqld.log | awk '{print $NF}'
       register: mysql_output
 
     - name: copy password reset sql
