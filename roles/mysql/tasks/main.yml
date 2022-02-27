@@ -16,12 +16,17 @@
     state: started
     enabled: true
 
-- name: Check if new password is working
+#- name: Check if new password is working
+#  shell: echo "show databases" | mysql -uroot -p"{{MYSQL_NEW_PASSWORD}}"
+#    #login_user: root
+#    #login_password: "{{MYSQL_NEW_PASSWORD}}"
+#  register: check_pass
+#  ignore_errors: yes
+
+- name: check if new password is working
   shell: echo "show databases" | mysql -uroot -p"{{MYSQL_NEW_PASSWORD}}"
-    #login_user: root
-    #login_password: "{{MYSQL_NEW_PASSWORD}}"
   register: check_pass
-  ignore_errors: yes
+
 
 - name: Password change block
   when: check_pass.failed # this means this task will only run when failed= true
