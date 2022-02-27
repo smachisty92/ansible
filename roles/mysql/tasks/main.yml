@@ -26,7 +26,8 @@
 - name: check if new password is working
   shell: echo "show databases" | mysql -uroot -p"{{MYSQL_NEW_PASSWORD}}"
   register: check_pass
-  ignore_errors: yes
+  ignore_errors: true
+
 
 
 - name: Password change block
