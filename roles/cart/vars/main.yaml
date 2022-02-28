@@ -1,5 +1,8 @@
 COMPONENT: cart
+
 APPTYPE: app
+
 LOG_FILES:
   - /var/log/cart.log
+
 LOGTYPE: json
