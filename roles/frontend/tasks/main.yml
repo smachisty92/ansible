@@ -15,13 +15,13 @@
     state: absent #means doesn't want it
 
 - name: Copy Roboshop Content
-  ansible.builtin.template:
+  ansible.builtin.copy:
     src: /tmp/frontend-main/static/
     dest: /usr/share/nginx/html/
     remote_src: yes
 
 - name: Update Roboshop cong
-  ansible.builtin.copy:
+  ansible.builtin.template:
     src: roboshop.conf
     dest: /etc/nginx/default.d/roboshop.congf
   notify: restart nginx
