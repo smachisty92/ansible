@@ -21,7 +21,7 @@
     remote_src: yes
 
 - name: Update Roboshop cong
-  ansible.builtin.template:
+  ansible.builtin.copy:
     src: roboshop.conf
     dest: /etc/nginx/default.d/roboshop.congf
   notify: restart nginx
