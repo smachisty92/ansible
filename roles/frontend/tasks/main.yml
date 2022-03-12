@@ -23,7 +23,7 @@
 - name: Update Roboshop cong
   ansible.builtin.template:
     src: roboshop.conf
-    dest: /etc/nginx/default.d/roboshop.congf
+    dest: /etc/nginx/default.d/roboshop.conf
   notify: restart nginx
 
 - name: Update Nginx Config
